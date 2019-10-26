@@ -11,6 +11,7 @@ using namespace std;
     for(size_t i = 0;i < size;i++){
         for(size_t j = 0;j < size;j++){
             array[i][j] = value;
+        }
     }
 }
 
@@ -24,7 +25,7 @@ using namespace std;
             }
         }
     }
-    return array[i][j];
+    return array;
 
   }
 
@@ -36,6 +37,7 @@ using namespace std;
             array[i][j] = value;
         }
     }
+    return array;
   }
 
   // Конструктор копирования
@@ -53,6 +55,7 @@ using namespace std;
     for(size_t i = 0; i < this->size_arr;i++){
         for(size_t j = 0; j < this->size_arr;j++){
             this->array[i][j] = rhs.array[i][j];
+        }
     }
     return *this;
   }
@@ -72,10 +75,9 @@ using namespace std;
             arr.array[i][j] = this->array[i][j] + rhs.array[i][j];
         }
       }
+      return arr;
   }
 
-    return arr;
-}
   Matrix &Matrix::operator+=(const Matrix &rhs){
     for(size_t i = 0;i < size;i++){
         for(size_t j = 0;j < size;j++){
@@ -96,8 +98,7 @@ using namespace std;
       }
 
     return arr;
-}
-  }
+    }
 
   Matrix &Matrix::operator-=(const Matrix &rhs){
     for(size_t i = 0;i < size;i++){
@@ -115,10 +116,10 @@ using namespace std;
       for(size_t i = 0;i < size;i++){
         for(size_t i = 0;i < size;i++){
             arr.array[i][j] = this->array[i][j] * rhs.array[i][j];
-      }
+        }
 
-    return arr;
-}
+        return arr;
+      }
   }
 
   Matrix &Matrix::operator*=(const Matrix &rhs){
@@ -126,7 +127,6 @@ using namespace std;
         for(size_t j = 0;j < size;j++){
             this->array[i][j] *= rhs.array[i][j];
       }
-
     return *this;
 
     }
@@ -183,7 +183,7 @@ using namespace std;
             matrix[j][i] = x;
         }
     }
-    return matrix[i][j];
+    return matrix;
   }
 
   // Транспонирует текущую матрицу
@@ -197,5 +197,5 @@ using namespace std;
             matrix[j][i] = x;
         }
     }
-    return matrix[i][j];
+    return matrix;
   }

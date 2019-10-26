@@ -68,7 +68,6 @@ using namespace std;
 // Поэлементное сложение векторов
   Vector Vector::operator+(const Vector &rhs) const{
       Vector arr = new double[size_arr];
-
       for(size_t i = 0;i < size;i++){
         arr.array[i] = this->array[i] + rhs.array[i];
       }
@@ -77,7 +76,6 @@ using namespace std;
 }
 
   Vector &Vector::operator+=(const Vector &rhs){
-
     for(size_t i = 0;i < size;i++){
         this->array[i] += rhs.array[i];
 
